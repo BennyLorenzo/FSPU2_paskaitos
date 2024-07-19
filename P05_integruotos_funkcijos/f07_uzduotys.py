@@ -130,8 +130,9 @@ darbuotojai = [
 ]
 salaries = []
 for vardas, pareigos, atlyginimas in darbuotojai:
-    salaries.append(atlyginimas)
-print(f'Visų darbuotojų atlyginimų suma: {sum(salaries)}')
+    if pareigos == 'programuotojas':
+        salaries.append(atlyginimas)
+print(f'Programuotojų atlyginimų suma: {sum(salaries)}')
 
 # 10. UŽDUOTIS
 # Išsiaiškinti pvz per wiki puslapį kaip yra nustatoma ar metai yra keliamieji ar ne. Parašyti
