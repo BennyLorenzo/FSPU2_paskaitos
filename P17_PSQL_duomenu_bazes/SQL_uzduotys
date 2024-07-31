@@ -1,0 +1,33 @@
+-- 1
+SELECT ROWID, * FROM darbuotojai;
+-- 2
+SELECT GIMIMO_DATA FROM darbuotojai;
+-- 3
+SELECT VARDAS, PAVARDĖ, PAREIGOS FROM darbuotojai;
+-- 4
+SELECT DISTINCT SKYRIUS_PAVADINIMAS FROM darbuotojai;
+-- 5
+SELECT * FROM darbuotojai WHERE SKYRIUS_PAVADINIMAS = "Gamybos";
+-- 6
+SELECT PAREIGOS FROM darbuotojai WHERE VARDAS = "Giedrius";
+-- 7
+SELECT * FROM darbuotojai WHERE GIMIMO_DATA = "1986-09-19"
+-- 8
+SELECT VARDAS FROM darbuotojai WHERE PAVARDĖ = "Sabutis"
+-- 9
+SELECT VARDAS, PAVARDĖ FROM darbuotojai WHERE PAREIGOS = "Programuotojas" AND SKYRIUS_PAVADINIMAS = "Gamybos";
+-- 10
+INSERT INTO DARBUOTOJAI VALUES("Gabrielius","Šikšnys","1996-01-19","Vadovas","Vadovybės");
+-- 11
+INSERT INTO DARBUOTOJAI VALUES("Darius","Šalenga","1980-10-22",NULL,NULL);
+-- 12
+UPDATE darbuotojai SET PAREIGOS = "Praktikantas", SKYRIUS_PAVADINIMAS = "Naujas" WHERE VARDAS = "Darius" AND PAVARDĖ = "Šalenga";
+-- 13
+DELETE FROM DARBUOTOJAI WHERE GIMIMO_DATA = "1996-01-19" OR GIMIMO_DATA = "1980-10-22";
+-- 14
+INSERT INTO DARBUOTOJAI VALUES(NULL,"Antanaitis",NULL,"Programuotojas",NULL);
+INSERT INTO DARBUOTOJAI VALUES(NULL,"Antanaitis",NULL,"Programuotojas",NULL);
+-- 15
+UPDATE darbuotojai SET PAREIGOS = "Testuotojas" WHERE PAVARDĖ = "Antanaitis";
+-- 16
+SELECT count() FROM DARBUOTOJAI WHERE PAREIGOS = "Testuotojas";
