@@ -11,7 +11,7 @@ class Projektas(Base):
     id = Column(Integer, primary_key=True)
     pavadinimas = Column(String)
     kaina = Column(Float)
-    sukurimo_data = Column(DateTime, default=datetime.datetime(2000,1,1))
+    sukurimo_data = Column(DateTime, default=datetime.datetime.utcnow)
 
     def __init__(self, pavadinimas, kaina):
         self.pavadinimas = pavadinimas
@@ -23,9 +23,9 @@ class Projektas(Base):
 Base.metadata.create_all(engine)
 
 # #############################
-# from sqlalchemy.orm import sessionmaker
-# Session = sessionmaker(bind=engine)
-# session = Session()
+from sqlalchemy.orm import sessionmaker
+Session = sessionmaker(bind=engine)
+session = Session()
 #
 # #############################
 # eilute_o = Projektas("Pirmas projektas",15000.5)
@@ -37,7 +37,9 @@ Base.metadata.create_all(engine)
 #
 # query = session.query(Projektas) # suformuojama SQL užklausa per Projektas klasę į projektas lentelę
 # visos_eilutes = query.all()
-# print(visos_eilutes)
+# for eilute in visos_eilutes:
+#     print(eilute)
+
 
 
 

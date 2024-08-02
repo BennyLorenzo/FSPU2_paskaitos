@@ -1,0 +1,34 @@
+SQL - structured query language
+
+lentelė - duombazė
+stulpeliai
+eilutės - įrašai
+laukai
+
+CRUD - programa dirbanti su duomenų bazėmis,
+naudojanti (create (insert), read (select), update,delete)
+
+-- * - pasirenkami visi stulpeliai
+-- SELECT * FROM asmenys;
+-- SELECT pavarde, gimetai FROM asmenys;
+-- SELECT vardas, atlyginimas FROM asmenys;
+-- SELECT * FROM asmenys WHERE pavarde="Vainauskas";
+-- SELECT * FROM asmenys WHERE atlyginimas > 1500;
+-- SELECT vardas, atlyginimas FROM asmenys WHERE vardas="Adomas"
+
+-- SELECT count() FROM asmenys WHERE atlyginimas = 2000;
+
+-- DELETE FROM asmenys WHERE pavarde = "Adomėnas";
+-- SELECT DISTINCT pavarde FROM asmenys;
+-- SELECT ROWID, * FROM asmenys;
+-- SELECT * FROM asmenys WHERE ROWID = 12;
+-- DELETE FROM asmenys WHERE ROWID = 12;
+
+-- INSERT įdeda vieną eilutę
+-- INSERT INTO asmenys VALUES("Vardenis","Pavardenis",2001,1599);
+
+-- SELECT ROWID, * FROM asmenys;
+-- DELETE FROM asmenys WHERE vardas = "Vardenis" AND gimetai = 2001;
+-- SELECT ROWID, * FROM asmenys;
+-- UPDATE asmenys SET gimetai = gimetai + 1;
+-- UPDATE asmenys SET vardas = "Valdas", pavarde = "Valdaitis" WHERE vardas = "Valdas" AND pavarde = "Pavardenis"
